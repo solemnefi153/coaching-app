@@ -1,0 +1,2 @@
+rootProject.name = "Life Coaching App"
+include ':app'
