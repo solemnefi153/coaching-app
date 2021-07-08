@@ -64,7 +64,6 @@ public class ChaptersRecyclerViewAdapter extends RecyclerView.Adapter<ChaptersRe
         ProgressBar chapter_progress_bar;
 
 
-
         public ThisViewHolder(@NonNull View itemView) {
             super(itemView);
             chapter_name_text = itemView.findViewById(R.id.chapter_name_text);
