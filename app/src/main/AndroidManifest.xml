@@ -9,15 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeCoachingApp">
-        <activity android:name=".Discovery"></activity>
-        <activity android:name=".Profile" />
+
+        <activity
+            android:name=".TestChapterTree"
+            android:parentActivityName="com.example.lifecoachingapp.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.lifecoachingapp.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".Discovery"
+            android:label="@string/title_discovery"
+            />
+        <activity
+            android:name=".Profile"
+            android:label="@string/title_profile"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
