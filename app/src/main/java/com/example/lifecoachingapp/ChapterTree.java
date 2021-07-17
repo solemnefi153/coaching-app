@@ -11,9 +11,8 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class TestChapterTree extends AppCompatActivity {
+public class ChapterTree extends AppCompatActivity {
 
-    TextView chapterReportText;
 
     //UI elements
     BottomNavigationView bottom_nav;
@@ -21,10 +20,8 @@ public class TestChapterTree extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_chapter_tree);
+        setContentView(R.layout.activity_chapter_tree);
 
-        //Grab the elements form this activity UI
-        chapterReportText = findViewById(R.id.chapterReportText);
 
         //Grab the variables sent through the intent
         String chapterId = getIntent().getStringExtra("ChapterId");
@@ -35,10 +32,6 @@ public class TestChapterTree extends AppCompatActivity {
         //Set the title of this activity to be the chapter name
         setTitle(chapterName);
 
-        //Update the text of this element to display the chapter report
-        String chapterReport = "You are in the " +  chapterId + ". " + chapterProgress + "/" + chapterSize;
-        chapterReportText.setText(chapterReport);
-
         //Initialize the bottom nav and set an event listener to the the bottom nav menu
         bottom_nav = findViewById(R.id.bottom_nav);
         bottom_nav.setSelectedItemId(R.id.home_page);
@@ -46,6 +39,7 @@ public class TestChapterTree extends AppCompatActivity {
         //Unselect everything in the menu
         Menu menu = bottom_nav.getMenu();
         unselectBottomMenuItems(menu);
+
 
         bottom_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -68,6 +62,9 @@ public class TestChapterTree extends AppCompatActivity {
             }
         });
     }
+
+
+
 
     void unselectBottomMenuItems(Menu menu){
         menu.setGroupCheckable(0, true, false);

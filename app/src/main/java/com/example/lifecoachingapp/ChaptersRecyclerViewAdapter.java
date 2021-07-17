@@ -73,7 +73,7 @@ public class ChaptersRecyclerViewAdapter extends RecyclerView.Adapter<ChaptersRe
             holder.chapter_row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, TestChapterTree.class);
+                    Intent intent = new Intent(context, ChapterTree.class);
                     String chapterId = "Chapter " + (position + 1);
                     intent.putExtra("ChapterId", chapterId);
                     intent.putExtra("ChapterSize", Integer.parseInt(chapterSizes[position]));
