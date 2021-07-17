@@ -11,7 +11,7 @@
         android:theme="@style/Theme.LifeCoachingApp">
 
         <activity
-            android:name=".TestChapterTree"
+            android:name=".ChapterTree"
             android:parentActivityName="com.example.lifecoachingapp.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
