@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -46,6 +47,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Initialize the data needed for the activity
+        chapters = getResources().getStringArray(R.array.chapters);
+        chapterColors = getResources().getStringArray(R.array.chapterColors);
+        chapterSizes = getResources().getStringArray(R.array.chapterSizes);
+
+        boolean taskCompleted = getIntent().getBooleanExtra("TaskCompleted", false);
+        if(taskCompleted){
+            //Show a toast congratulating the user
+            Toast.makeText(getApplicationContext(), "Congratulations for finishing a task! keep up on you path to success", Toast.LENGTH_LONG).show();
+        }
+
+
+        //A list of chapters with its respective progress saved in the shared preferences
+        sp = getSharedPreferences("chaptersProgress", Context.MODE_PRIVATE);
+        //Check if this file has been initialized
+        if(!sp.contains("Chapter_1_progress")){
+            initializeSharedPreferenceToTrackChapterProgress();
+        }
+        loadChapterProgressArray();
+
+        //Load the list of chapters in the UI
+        chapters_recycler_view = findViewById(R.id.chapters_recycler_view);
+        ChaptersRecyclerViewAdapter chaptersRecyclerViewAdapter = new ChaptersRecyclerViewAdapter(this, chapters, chapterColors, chapterSizes, chapterProgress, images );
+        chapters_recycler_view.setAdapter(chaptersRecyclerViewAdapter);
+        chapters_recycler_view.setLayoutManager(new LinearLayoutManager(this));
+
+
         //Initialize the bottom nav and set an event listener to the the bottom nav menu
         bottom_nav = findViewById(R.id.bottom_nav);
         bottom_nav.setSelectedItemId(R.id.home_page);
@@ -67,43 +95,23 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-        //Initialize the data needed for the activity
-        chapters = getResources().getStringArray(R.array.chapters);
-        chapterColors = getResources().getStringArray(R.array.chapterColors);
-        chapterSizes = getResources().getStringArray(R.array.chapterSizes);
-
-        //A list of chapters with its respective progress saved in the shared preferences
-        sp = getSharedPreferences("chaptersProgress", Context.MODE_PRIVATE);
-        //Check if this file has been initialized
-        if(!sp.contains("Chapter 1")){
-            initializeSharedPreferenceToTrackChapterProgress();
-        }
-        loadChapterProgressArray();
-
-        //Load the list of chapters in the UI
-        chapters_recycler_view = findViewById(R.id.chapters_recycler_view);
-        ChaptersRecyclerViewAdapter chaptersRecyclerViewAdapter = new ChaptersRecyclerViewAdapter(this, chapters, chapterColors, chapterSizes, chapterProgress, images );
-        chapters_recycler_view.setAdapter(chaptersRecyclerViewAdapter);
-        chapters_recycler_view.setLayoutManager(new LinearLayoutManager(this));
-
     }
 
     void initializeSharedPreferenceToTrackChapterProgress(){
         SharedPreferences.Editor editor = sp.edit();
         for(int i = 1; i <= chapters.length; i++){
-            String chapter = "Chapter " + i;
+            String chapterProgress = "Chapter_" + i + "_progress";
             //Initialize to zero
-            editor.putInt(chapter, 0);
+            editor.putInt(chapterProgress, 0);
         }
         editor.apply();
     }
 
     void loadChapterProgressArray(){
         for(int i = 1; i <= chapters.length; i++){
-            String chapter = "Chapter " + i;
+            String thisChapterProgress = "Chapter_" + i + "_progress";
             //Push this value in the array of chapterProgress
-            int progress = sp.getInt(chapter, 0);
+            int progress = sp.getInt(thisChapterProgress, 0);
             chapterProgress.add(progress);
         }
     }

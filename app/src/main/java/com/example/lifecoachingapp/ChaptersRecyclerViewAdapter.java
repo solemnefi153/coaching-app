@@ -81,7 +81,6 @@ public class ChaptersRecyclerViewAdapter extends RecyclerView.Adapter<ChaptersRe
                     intent.putExtra("ChapterName", chapterNames[position]);
                     intent.putExtra("ChapterColor", chapterColor);
                     intent.putExtra("ChapterIcon", images[position]);
-                    intent.putExtra("ChapterIndex", position);
                     context.startActivity(intent);
                 }
             });

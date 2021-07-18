@@ -50,7 +50,6 @@ public class ChapterTree extends AppCompatActivity {
         int chapterProgress = getIntent().getIntExtra("ChapterProgress", 0);
         int chapterColor = getIntent().getIntExtra("ChapterColor", 0);
         int chapterIcon = getIntent().getIntExtra("ChapterIcon", 0);
-        int chapterIndex = getIntent().getIntExtra("ChapterIndex", 0);
 
 
         //Set the title of this activity to be the chapter name
@@ -117,8 +116,8 @@ public class ChapterTree extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(ChapterTree.this, VideoTask.class);
                         intent.putExtra("TaskTitle", taskTitle);
-                        intent.putExtra("ChapterIndex", chapterIndex);
-                        intent.putExtra("ChapterVideoId", chapterIndex);
+                        intent.putExtra("ChapterId", chapterId);
+                        intent.putExtra("ChapterVideoId", task_video_ids[finalI]);
                         intent.putExtra("TaskCompleted", chapterProgress > finalI);
                         startActivity(intent);
                     }
