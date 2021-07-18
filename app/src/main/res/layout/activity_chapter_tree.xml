@@ -17,14 +17,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1">
+        app:layout_constraintVertical_bias="0.1"
+        android:visibility="invisible"
+        >
         <ImageView
+            android:id="@+id/task_1_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="25dp"
             android:src="@drawable/ic_growth"
             android:scaleType="centerCrop"/>
     </androidx.cardview.widget.CardView>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/task_2"
@@ -34,11 +38,13 @@
         app:cardCornerRadius="250dp"
         app:layout_constraintBottom_toTopOf="@+id/task_4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_1"
-        app:layout_constraintVertical_bias="0.50">
+        app:layout_constraintVertical_bias="0.50"
+        android:visibility="invisible">
         <ImageView
+            android:id="@+id/task_2_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="25dp"
@@ -54,11 +60,13 @@
         app:cardCornerRadius="250dp"
         app:layout_constraintBottom_toTopOf="@+id/task_4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_1"
-        app:layout_constraintVertical_bias="0.50">
+        app:layout_constraintVertical_bias="0.50"
+        android:visibility="invisible">
         <ImageView
+            android:id="@+id/task_3_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="25dp"
@@ -70,19 +78,19 @@
         android:id="@+id/task_4"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:cardBackgroundColor="@color/purple_500"
         app:cardCornerRadius="250dp"
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9">
+        app:layout_constraintVertical_bias="0.9"
+        android:visibility="invisible">
         <ImageView
+            android:id="@+id/task_4_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="25dp"
-            android:src="@drawable/ic_growth"
             android:scaleType="centerCrop"/>
     </androidx.cardview.widget.CardView>
 
@@ -102,5 +110,43 @@
         android:layout_alignParentBottom="true">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TextView
+        android:id="@+id/task_1_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/task_1"
+        app:layout_constraintStart_toStartOf="@+id/task_1"
+        app:layout_constraintTop_toBottomOf="@+id/task_1" />
+
+    <TextView
+        android:id="@+id/task_2_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/task_2"
+        app:layout_constraintStart_toStartOf="@+id/task_2"
+        app:layout_constraintTop_toBottomOf="@+id/task_2" />
+
+    <TextView
+        android:id="@+id/task_3_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/task_3"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/task_3"
+        app:layout_constraintTop_toBottomOf="@+id/task_3" />
+
+    <TextView
+        android:id="@+id/task_4_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/task_4"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/task_4"
+        app:layout_constraintTop_toBottomOf="@+id/task_4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

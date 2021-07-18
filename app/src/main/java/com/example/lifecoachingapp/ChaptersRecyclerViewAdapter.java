@@ -74,16 +74,20 @@ public class ChaptersRecyclerViewAdapter extends RecyclerView.Adapter<ChaptersRe
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, ChapterTree.class);
-                    String chapterId = "Chapter " + (position + 1);
+                    String chapterId = "Chapter_" + (position + 1);
                     intent.putExtra("ChapterId", chapterId);
                     intent.putExtra("ChapterSize", Integer.parseInt(chapterSizes[position]));
                     intent.putExtra("ChapterProgress", chapterProgress.get(position));
                     intent.putExtra("ChapterName", chapterNames[position]);
+                    intent.putExtra("ChapterColor", chapterColor);
+                    intent.putExtra("ChapterIcon", images[position]);
+                    intent.putExtra("ChapterIndex", position);
                     context.startActivity(intent);
                 }
             });
         }
         else{
+            //This is a gray color for locked items
             chapterColor =  Color.parseColor("#D3D3D3");
             //Change this to a lock
             holder.chapter_image.setImageResource(R.drawable.ic_lock);
@@ -91,7 +95,7 @@ public class ChaptersRecyclerViewAdapter extends RecyclerView.Adapter<ChaptersRe
             holder.chapter_row.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "Locked chapter. Finish previous chapter to unlock", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "Locked chapter. Finish previous chapters to unlock", Toast.LENGTH_LONG).show();
                 }
             });
         }

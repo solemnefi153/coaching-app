@@ -26,12 +26,105 @@
 
     <string-array name="chapterSizes">
         <item>2</item>
+        <item>4</item>
         <item>3</item>
         <item>4</item>
-        <item>5</item>
-        <item>2</item>
-        <item>3</item>
         <item>4</item>
+        <item>4</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="Chapter_1_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+    </string-array>
+
+
+    <string-array name="Chapter_2_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+        <item>JdAe128QvOM</item>
+    </string-array>
+
+    <string-array name="Chapter_3_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+    </string-array>
+
+    <string-array name="Chapter_4_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+        <item>JdAe128QvOM</item>
+    </string-array>
+
+    <string-array name="Chapter_5_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+        <item>JdAe128QvOM</item>
+    </string-array>
+
+    <string-array name="Chapter_6_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+        <item>JdAe128QvOM</item>
+    </string-array>
+
+    <string-array name="Chapter_7_videos">
+        <item>rUTAh4gFGaQ</item>
+        <item>rITJeAIvTxY</item>
+        <item>az6NibAUf7Y</item>
+        <item>JdAe128QvOM</item>
+    </string-array>
+
+    <string-array name="Chapter_1">
+        <item>App overview</item>
+        <item>Update your profile</item>
+    </string-array>
+
+    <string-array name="Chapter_2">
+        <item>Define motivation</item>
+        <item>Identify your priorities</item>
+        <item>The real why</item>
+        <item>You motivation</item>
+    </string-array>
+
+    <string-array name="Chapter_3">
+        <item>How to measure success</item>
+        <item>Discover your values</item>
+        <item>List your values</item>
+    </string-array>
+
+    <string-array name="Chapter_4">
+        <item>What makes you happy?</item>
+        <item>Marginal satisfaction</item>
+        <item>The secret formula</item>
+        <item>Mission statement</item>
+    </string-array>
+
+    <string-array name="Chapter_5">
+        <item>The core areas</item>
+        <item>5 year vision</item>
+        <item>1 year vision</item>
+        <item>Your code areas</item>
+    </string-array>
+
+    <string-array name="Chapter_6">
+        <item>Plan for success</item>
+        <item>SMART goals</item>
+        <item>The daily success</item>
+        <item>Define your goals</item>
+    </string-array>
+
+    <string-array name="Chapter_7">
+        <item>Habits</item>
+        <item>I am statements</item>
+        <item>Stay motivated</item>
+        <item>Achieve all your goals</item>
     </string-array>
 
 </resources>
