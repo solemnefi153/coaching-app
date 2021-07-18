@@ -6,17 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".Discovery">
 
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/mission_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discovery View"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Mission Statement"
+        android:textColor="@color/teal_700"
+        android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/mission_statement_input"
+        android:hint="Type your mission statement here"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="top"
+        android:inputType="text|textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mission_title" />
+
+    <ImageButton
+        android:id="@+id/mission_statement_edit_btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_save_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mission_statement_input" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toBottomOf="@+id/mission_statement_edit_btn"
+        app:layout_constraintEnd_toStartOf="@+id/mission_statement_edit_btn"
+        app:layout_constraintTop_toTopOf="@+id/mission_statement_edit_btn" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
