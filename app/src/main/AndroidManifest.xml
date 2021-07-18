@@ -10,8 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LifeCoachingApp">
 
-        <activity android:name=".Profile_page"></activity>
-
         <activity
             android:name=".ChapterTree"
             android:parentActivityName="com.example.lifecoachingapp.MainActivity">
